@@ -9,8 +9,10 @@ function changeWord(selectedText, changedText, text) {
   const kalimat1 = 'Andini sangat mencintai kamu selamanya';
   const kalimat2 = 'Gunung bromo tak akan mampu menggambarkan besarnya cintaku padamu';
   
+ 
   console.log(changeWord('mencintai', 'membenci', kalimat1)); 
   console.log(changeWord('bromo', 'semeru', kalimat2)); 
+
   
   // Question 2
 
@@ -31,15 +33,26 @@ function changeWord(selectedText, changedText, text) {
 
  };
 
+ console.log(checkTypeNumber(3));
+ console.log(checkTypeNumber(10));
+ console.log(checkTypeNumber([]));
  console.log(checkTypeNumber({}));
+ console.log(checkTypeNumber());
 
 //  Question 3
 
 const getAngkaTerbesarKedua = (dataNumbers) => {
   // Validasi tipe data parameter
+
+  if (typeof dataNumbers === 'undefined') {
+    return "ERROR: Parameter anda kosong";
+  }
+
   if (!Array.isArray(dataNumbers)) {
     return "ERROR: Parameter harus berupa array";
   }
+
+  
   
   // Validasi panjang array, harus minimal dua angka
   if (dataNumbers.length < 2) {
@@ -56,11 +69,11 @@ const getAngkaTerbesarKedua = (dataNumbers) => {
 }
 
 const dataAngka = [9, 4, 7, 7, 4, 3, 2, 2, 8];
+
 console.log(getAngkaTerbesarKedua(dataAngka)); 
 
-console.log(getAngkaTerbesarKedua("string")); 
-console.log(getAngkaTerbesarKedua([1])); 
-console.log(getAngkaTerbesarKedua([])); 
+console.log(getAngkaTerbesarKedua(0)); 
+console.log(getAngkaTerbesarKedua()); 
 
 // Question 4
 
@@ -94,7 +107,7 @@ const dataPenjualanPakAldi = [
   const getTotalPenjualan = (dataPenjualan) => {
     // Validasi apakah parameter dataPenjualan adalah sebuah array
     if (!Array.isArray(dataPenjualan)) {
-      console,log ('Parameter dataPenjualan harus berupa array.');
+      console.log ('Parameter dataPenjualan harus berupa array.');
     }
   
     // Gunakan map untuk mendapatkan semua nilai totalTerjual
@@ -107,7 +120,7 @@ const dataPenjualanPakAldi = [
     });
   
     // Menggunakan reduce untuk menjumlahkan nilai-nilai dalam totalTerjualArray
-    const totalPenjualan = totalTerjualArray.reduce((total, current) => total + current, 0);
+    const totalPenjualan = totalTerjualArray.reduce((total, current) => total + current);
   
     return totalPenjualan;
   }
@@ -158,7 +171,7 @@ const dataPenjualanNovel = [
 const getInfoPenjualan = (dataPenjualan) => {
   // Validasi apakah dataPenjualan sebuah array atau object
   if (!Array.isArray(dataPenjualan) || typeof (dataPenjualan) !== "object" ) {
-    console.log ('Parameter dataPenjualan harus berupa array dan object.');
+    console.log ('Parameter dataPenjualan harus berupa array.');
   }
 
     // Mencari Total Keuntungan
@@ -191,4 +204,5 @@ const getInfoPenjualan = (dataPenjualan) => {
   };
   
   getInfoPenjualan(dataPenjualanNovel);
+
   
