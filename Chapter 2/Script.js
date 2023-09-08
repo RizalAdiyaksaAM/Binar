@@ -115,5 +115,81 @@ const dataPenjualanPakAldi = [
 
   console.log(getTotalPenjualan(dataPenjualanPakAldi));
 
+// Question 5
 
+const dataPenjualanNovel = [
+  {
+    idProduct: "BOOK002421",
+    namaProduk: "Pulang - Pergi",
+    penulis: "Tere Liye",
+    hargaBeli: 60000,
+    hargaJual: 86000,
+    totalTerjual: 150,
+    sisaStok: 17,
+  },
+  {
+    idProduct: "BOOK002351",
+    namaProduk: "Selamat Tinggal",
+    penulis: "Tere Liye",
+    hargaBeli: 75000,
+    hargaJual: 103000,
+    totalTerjual: 171,
+    sisaStok: 20,
+  },
+  {
+    idProduct: "BOOK002941",
+    namaProduk: "Garis Waktu",
+    penulis: "Fiersa Besari",
+    hargaBeli: 67000,
+    hargaJual: 99000,
+    totalTerjual: 213,
+    sisaStok: 5,
+  },
+  {
+    idProduct: "BOOK002941",
+    namaProduk: "Laskar Pelangi",
+    penulis: "Andrea Hirata",
+    hargaBeli: 55000,
+    hargaJual: 68000,
+    totalTerjual: 20,
+    sisaStok: 56,
+  },
+];
+
+const getInfoPenjualan = (dataPenjualan) => {
+  // Validasi apakah dataPenjualan sebuah array atau object
+  if (!Array.isArray(dataPenjualan) || typeof (dataPenjualan) !== "object" ) {
+    console.log ('Parameter dataPenjualan harus berupa array.');
+  }
+
+    // Mencari Total Keuntungan
+    const totalKeuntungan = dataPenjualan.map((produk) => {
+      return (produk.hargaJual - produk.hargaBeli) * produk.totalTerjual;
+    }).reduce((total, keuntungan) => total + keuntungan);
+  
+     // Mencari Total Modal
+    const totalModal = dataPenjualan.map((produk) => {
+      return produk.hargaBeli * produk.totalTerjual;
+    }).reduce((total, modal) => total + modal);
+    
+    // Mencari rata-rata persentase Keuntungan
+    const rataRataPersentaseKeuntungan = (totalKeuntungan / totalModal) * 100;
+    
+    // Mencari produk dan penulis terlaris
+    dataPenjualan.sort((a, b) => b.totalTerjual - a.totalTerjual);
+  
+  
+    let produkTerlaris = null;
+    if (dataPenjualan.length > 0) {
+      produkTerlaris = dataPenjualan[0];
+    }
+  
+    console.log(`Total Keuntungan: Rp.${totalKeuntungan.toLocaleString("id-ID")}`);
+    console.log(`Total Modal: Rp.${totalModal.toLocaleString("id-ID")}`);
+    console.log(`Persentase Keuntungan: ${rataRataPersentaseKeuntungan.toFixed(2)}%`);
+    console.log(`Produk Terlaris: ${produkTerlaris.namaProduk} (Total Terjual: ${produkTerlaris.totalTerjual})`);
+    console.log(`Penulis Terlaris: ${produkTerlaris.penulis} (Total Terjual: ${produkTerlaris.totalTerjual})`);
+  };
+  
+  getInfoPenjualan(dataPenjualanNovel);
   
