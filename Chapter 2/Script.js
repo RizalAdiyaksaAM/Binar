@@ -9,13 +9,8 @@ function changeWord(selectedText, changedText, text) {
   const kalimat1 = 'Andini sangat mencintai kamu selamanya';
   const kalimat2 = 'Gunung bromo tak akan mampu menggambarkan besarnya cintaku padamu';
   
-  // Mengganti "mencintai" dengan "membenci" dalam kalimat1
   console.log(changeWord('mencintai', 'membenci', kalimat1)); 
-  // Output: Andini sangat membenci kamu selamanya
-  
-  // Mengganti "bromo" dengan "semeru" dalam kalimat2
   console.log(changeWord('bromo', 'semeru', kalimat2)); 
-  // Output: Gunung semeru tak akan mampu menggambarkan besarnya cintaku padamu
   
   // Question 2
 
@@ -62,11 +57,11 @@ const getAngkaTerbesarKedua = (dataNumbers) => {
 
 // Sample case
 const dataAngka = [9, 4, 7, 7, 4, 3, 2, 2, 8];
-console.log(getAngkaTerbesarKedua(dataAngka)); // Output: 8
+console.log(getAngkaTerbesarKedua(dataAngka)); 
 
-console.log(getAngkaTerbesarKedua("string")); // Output: "ERROR: Parameter harus berupa array"
-console.log(getAngkaTerbesarKedua([1])); // Output: "ERROR: Array harus memiliki minimal dua angka"
-console.log(getAngkaTerbesarKedua([])); // Output: "ERROR: Array harus memiliki minimal dua angka"
+console.log(getAngkaTerbesarKedua("string")); 
+console.log(getAngkaTerbesarKedua([1])); 
+console.log(getAngkaTerbesarKedua([])); 
 
 // Question 4
 
