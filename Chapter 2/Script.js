@@ -158,7 +158,7 @@ const dataPenjualanNovel = [
 const getInfoPenjualan = (dataPenjualan) => {
   // Validasi apakah dataPenjualan sebuah array atau object
   if (!Array.isArray(dataPenjualan) || typeof (dataPenjualan) !== "object" ) {
-    console.log ('Parameter dataPenjualan harus berupa array.');
+    console.log ('Parameter dataPenjualan harus berupa array dan object.');
   }
 
     // Mencari Total Keuntungan
