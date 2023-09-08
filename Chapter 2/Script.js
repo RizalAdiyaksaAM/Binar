@@ -55,7 +55,6 @@ const getAngkaTerbesarKedua = (dataNumbers) => {
   return max2;
 }
 
-// Sample case
 const dataAngka = [9, 4, 7, 7, 4, 3, 2, 2, 8];
 console.log(getAngkaTerbesarKedua(dataAngka)); 
 
